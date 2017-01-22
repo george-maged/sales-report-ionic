@@ -1,0 +1,8 @@
+{
+  "name": "PET",
+  "app_id": "87a5b892",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ]
+}

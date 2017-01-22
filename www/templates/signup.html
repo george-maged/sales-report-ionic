@@ -1,0 +1,31 @@
+<ion-view title="Signup" hide-nav-bar="true" cache-view="false" nav-transition="none" id="page5">
+  <ion-content padding="true" style="background: url(img/EKFtPCGiSAepGF5hCI5w_slider-2.jpg) no-repeat center;background-size:cover;" class="manual-ios-statusbar-padding" scroll="false">
+    <div ng-if="data.error" style="text-align:center;" class="show-list-numbers-and-dots fade-element-in error-box">
+      <p style="color:#FFFFFF;">{{data.error}}</p>
+    </div>
+    <form class="list center-form">
+      <div>
+        <img src="img/5xKo1FwMRdCm3jJyrK0w_logo.png" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
+      </div>
+      <div class="spacer" style="width: 300px; height: 12px;"></div>
+      <ion-list>
+        <label class="item item-input top-input">
+          <input type="text" ng-model = "data.fullName" placeholder="Full Name">
+        </label>
+        <label class="item item-input">
+          <input type="text" ng-model= "data.email" placeholder="Email">
+        </label>
+        <label class="item item-input">
+          <input type="password" ng-model = "data.password" placeholder="Password">
+        </label>
+        <label class="item item-input">
+          <input type="password" ng-model = "data.password2" placeholder="Confirm Password">
+        </label>
+        <ion-checkbox class="bottom-input" ng-model = "data.manager">Manager</ion-checkbox>
+      </ion-list>
+      <div class="spacer" style="width: 300px; height: 12px;"></div>
+      <button ng-click="signUpFunc()" ion-ripple ion-ripple-color="#1500b8" class="button button-positive  button-block">SIGN UP</button>
+      <button ion-ripple ion-ripple-color="#808080" ui-sref="login" class="button button-light  button-block button-outline">ALREADY HAVE AN ACCOUNT?</button>
+    </form>
+  </ion-content>
+</ion-view>
