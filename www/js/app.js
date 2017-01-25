@@ -14,6 +14,13 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.directives
 
 })
 
+.service('errorMaker', function() {
+  this.displayError= function(scope,timeout,message){
+    scope.data.error = message;
+    timeout(function(){scope.data.error=""},3000);
+  }
+})
+
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -59,26 +66,26 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.directives
 /*
   This directive is used to open regular and dynamic href links inside of inappbrowser.
 */
-.directive('hrefInappbrowser', function() {
-  return {
-    restrict: 'A',
-    replace: false,
-    transclude: false,
-    link: function(scope, element, attrs) {
-      var href = attrs['hrefInappbrowser'];
+// .directive('hrefInappbrowser', function() {
+//   return {
+//     restrict: 'A',
+//     replace: false,
+//     transclude: false,
+//     link: function(scope, element, attrs) {
+//       var href = attrs['hrefInappbrowser'];
 
-      attrs.$observe('hrefInappbrowser', function(val){
-        href = val;
-      });
+//       attrs.$observe('hrefInappbrowser', function(val){
+//         href = val;
+//       });
       
-      element.bind('click', function (event) {
+//       element.bind('click', function (event) {
 
-        window.open(href, '_system', 'location=yes');
+//         window.open(href, '_system', 'location=yes');
 
-        event.preventDefault();
-        event.stopPropagation();
+//         event.preventDefault();
+//         event.stopPropagation();
 
-      });
-    }
-  };
-});
+//       });
+//     }
+//   };
+// });

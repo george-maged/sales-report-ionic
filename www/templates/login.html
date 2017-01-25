@@ -1,23 +1,24 @@
-<ion-view title="Login" hide-nav-bar="true" cache-view="false" nav-transition="none" id="page3">
+<ion-view title="Login" hide-nav-bar="true" cache-view="false" nav-transition="none" id="login">
   <ion-content padding="true" style="background: url(img/EKFtPCGiSAepGF5hCI5w_slider-2.jpg) no-repeat center;background-size:cover;" class="manual-ios-statusbar-padding" scroll="false">
-    <div ng-if="error" style="text-align:center;" class="show-list-numbers-and-dots error-box">
-      <p style="color:#FFFFFF;">{{error}}</p>
+    <div ng-if="data.error" style="text-align:center;" class="show-list-numbers-and-dots fade-element-in error-box">
+      <p style="color:#FFFFFF;">{{data.error}}</p>
     </div>
-    <form id="login-form2" class="list center-form">
+    <form class="list center-form">
       <div>
         <img src="img/5xKo1FwMRdCm3jJyrK0w_logo.png" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
       </div>
       <div class="spacer" style="width: 300px; height: 12px;"></div>
-      <ion-list id="login-list2">
-        <label class="item item-input top-input" id="login-input9">
-          <input type="email" placeholder="Email">
+      <ion-list>
+        <label class="item item-input top-input">
+          <input type="email" ng-model="data.email" placeholder="Email">
         </label>
-        <label class="item item-input bottom-input" id="login-input5">
-          <input type="password" placeholder="Password">
+        <label class="item item-input bottom-input">
+          <input type="password" ng-model="data.password" placeholder="Password">
         </label>
       </ion-list>
       <div class="spacer" style="width: 300px; height: 12px;"></div>
-      <button href-inappbrowser="/login" ion-ripple ion-ripple-color="#1500b8" class="button button-positive  button-block">LOG IN</button>
+      <button ng-click="logInFunc(data.email,data.password)" ion-ripple ion-ripple-color="#1500b8" class="button button-positive  button-block"><span ng-if="!data.loading">LOG IN</span> <ion-spinner ng-if="data.loading" class="spinner-energized" style="height:4vh;display:inline-block;vertical-align:middle"></ion-spinner>
+      </button>
       <button ion-ripple ion-ripple-color="#808080" ui-sref="signup" class="button button-light  button-block button-outline">CREATE AN ACCOUNT</button>
     </form>
   </ion-content>
