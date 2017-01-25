@@ -9831,10 +9831,11 @@ a.button {
   padding: 10px;
   border: 1px solid #e42112;
   background-color: #ef473a;
-  opacity: 0.85;
+  opacity: 1;
   border-radius: 4px;
   margin-bottom: 10px; }
   .error-box p {
+    font-size: 110%;
     color: white;
     margin: 0px; }
 .fade-element-in.ng-enter {
@@ -9843,19 +9844,17 @@ a.button {
 }
 
 .fade-element-in-init .fade-element-in.ng-enter {
-    opacity: 0.85;
+    opacity: 1;
 }
 
 .fade-element-in.ng-enter.ng-enter-active {
-    opacity: 0.85;
+    opacity: 1;
 }
 
 .fade-element-in.ng-leave {
     transition: 0.8s linear all;
-    opacity: 0.85;
+    opacity: 1;
 }
 .fade-element-in.ng-leave.ng-leave-active {
     opacity: 0;
 }
-
-$ion-ripple-duration: .45s !default;
